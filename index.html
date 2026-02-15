@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hadiah Untuk Kamu ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+<source src="happy-birthday.mp3" type="audio/mp3">
+</audio>
+
+<!-- INTRO -->
+<div id="intro">
+
+<div class="question-box">
+
+<h2>kamu sayang aku ndaaa? ❤️</h2>
+
+<button onclick="answer(true)">iyaa sayangg ❤️</button>
+<button onclick="answer(false)">enggaa</button>
+
+<p id="answerText"></p>
+
+</div>
+
+</div>
+
+<!-- TRANSISI -->
+<div id="transitionText"></div>
+
+<!-- BUKU -->
+<div class="book-wrapper hidden">
+
+<button class="nav left" onclick="prevPage()">❮</button>
+
+<div class="book" id="book"></div>
+
+<button class="nav right" onclick="nextPage()">❯</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

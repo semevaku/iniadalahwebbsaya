@@ -1,0 +1,182 @@
+body{
+margin:0;
+font-family:Comic Sans MS;
+background:linear-gradient(135deg,#ffd6e7,#ffc0cb,#ffe4ec);
+overflow:hidden;
+}
+
+/* background lucu */
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background-image:
+url("https://cdn-icons-png.flaticon.com/512/2589/2589175.png"),
+url("https://cdn-icons-png.flaticon.com/512/869/869869.png"),
+url("https://cdn-icons-png.flaticon.com/512/742/742751.png");
+
+background-size:60px;
+opacity:0.15;
+animation:bgmove 30s linear infinite;
+z-index:0;
+}
+
+@keyframes bgmove{
+from{background-position:0 0;}
+to{background-position:300px 600px;}
+}
+
+/* intro */
+#intro{
+position:fixed;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:10;
+}
+
+.question-box{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 20px pink;
+text-align:center;
+animation:pop 1s;
+}
+
+button{
+padding:12px 25px;
+margin:10px;
+border:none;
+border-radius:15px;
+background:pink;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:hotpink;
+}
+
+/* transition */
+#transitionText{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:24px;
+text-align:center;
+color:white;
+text-shadow:0 0 10px hotpink;
+z-index:9;
+}
+
+/* buku wrapper */
+.book-wrapper{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+display:flex;
+align-items:center;
+gap:10px;
+z-index:10;
+}
+
+/* buku */
+.book{
+width:min(90vw,400px);
+height:min(80vh,500px);
+position:relative;
+perspective:2000px;
+z-index:5;
+}
+
+/* halaman */
+.page{
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(#fff0f5,#ffd6e0);
+border-radius:20px;
+padding:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+transform-origin:left;
+transform-style:preserve-3d;
+transition:1s;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:5;
+}
+
+.page.flipped{
+transform:rotateY(-180deg);
+}
+
+/* text */
+.text{
+font-size:18px;
+text-align:center;
+color:#d63384;
+min-height:100px;
+}
+
+/* tombol nav */
+.nav{
+z-index:999;
+font-size:30px;
+background:white;
+border-radius:50%;
+width:55px;
+height:55px;
+cursor:pointer;
+box-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+
+/* dekorasi */
+.decor-top img{
+width:40px;
+margin:5px;
+animation:float 3s infinite;
+}
+
+.decor-bottom{
+font-size:25px;
+margin-top:10px;
+animation:float 2s infinite;
+}
+
+/* confetti */
+.confetti{
+position:fixed;
+top:-20px;
+font-size:20px;
+animation:fall linear infinite;
+z-index:1;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(360deg);
+}
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+}
+
+@keyframes pop{
+from{transform:scale(0);}
+to{transform:scale(1);}
+}
+
+.hidden{
+display:none;
+}
